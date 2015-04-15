@@ -1,0 +1,28 @@
+{
+  "name": "vsbl2sparql",
+  "main": "vsbl2sparql-angular.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/leipert/vsbl2sparql",
+  "authors": [
+    "Lukas Eipert <git@leipert.io>"
+  ],
+  "description": "This package provides a Parser for VSBL-Models in JSON to SPARQL as an angular-module",
+  "keywords": [
+    "VSB",
+    "VSBL",
+    "SPARQL",
+    "JSON",
+    "Parser",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "vsbl2sparql-node.js",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tpl",
+    "test",
+    "lib"
+  ]
+}

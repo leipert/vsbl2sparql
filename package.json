@@ -1,0 +1,39 @@
+{
+  "name": "vsbl2sparql",
+  "version": "0.1.0",
+  "description": "This package provides a Parser for VSBL-Models in JSON to SPARQL",
+  "main": "vsbl2sparql-node.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leipert/vsbl2sparql"
+  },
+  "keywords": [
+    "VSB",
+    "VSBL",
+    "SPARQL",
+    "JSON",
+    "Parser"
+  ],
+  "author": "Lukas Eipert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leipert/vsbl2sparql/issues"
+  },
+  "homepage": "https://github.com/leipert/vsbl2sparql",
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "jassa-core": "https://github.com/GeoKnow/Jassa-Core.git#develop",
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "glob": "^5.0.5",
+    "gulp": "^3.8.11",
+    "gulp-file-include": "^0.8.0",
+    "gulp-rename": "^1.2.2",
+    "mocha": "^2.0.1"
+  }
+}
