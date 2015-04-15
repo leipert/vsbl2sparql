@@ -1,7 +1,7 @@
 {
   "name": "vsbl2sparql",
   "main": "vsbl2sparql-angular.js",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "homepage": "https://github.com/leipert/vsbl2sparql",
   "authors": [
     "Lukas Eipert <git@leipert.io>"
@@ -17,12 +17,14 @@
   ],
   "license": "MIT",
   "ignore": [
-    "vsbl2sparql-node.js",
     "**/.*",
     "node_modules",
     "bower_components",
     "tpl",
     "test",
-    "lib"
+    "lib",
+    "vsbl2sparql-node.js",
+    "package.json",
+    "gulpfile.js"
   ]
 }
