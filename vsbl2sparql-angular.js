@@ -12,7 +12,24 @@
 
     function VSBL2SPARQL() {
 
-        var jassa = new Jassa(Promise, $.ajax);
+      var jassa = new Jassa(Promise, function (options) {
+
+               var cancelPendingRequest = Promise.defer();
+
+               var httpRequest = jassa.util.PromiseUtils.createDeferred(true);
+
+               options.timeout = cancelPendingRequest.promise;
+               options.params = options.data;
+               delete (options.data);
+
+               $http(options).success(httpRequest.resolve).error(httpRequest.reject);
+
+               return httpRequest.promise()
+                   .catch(Promise.TimeoutError, Promise.CancellationError, function (e) {
+                       cancelPendingRequest.resolve();
+                       throw e;
+                   });
+           });
 
 
 var sparql = jassa.sparql;

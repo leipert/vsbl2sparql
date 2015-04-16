@@ -27,5 +27,9 @@
     "vsbl2sparql-node.js",
     "package.json",
     "gulpfile.js"
-  ]
+  ],
+  "dependencies": {
+    "jassa": "v0.9.0-SNAPSHOT",
+    "angular": "*"
+  }
 }

@@ -1,0 +1,15 @@
+{
+  "CONFIG": "DBPEDIA_CONFIG",
+  "START": {
+    "type": "LIST_ALL",
+    "linkTo": "person"
+  },
+  "SUBJECTS": [
+    {
+      "uri": "http://dbpedia.org/ontology/Person",
+      "view": true,
+      "alias": "person",
+      "properties": []
+    }
+  ]
+}

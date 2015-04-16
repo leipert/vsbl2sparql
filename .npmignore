@@ -6,3 +6,4 @@ tpl/
 gulpfile.js
 bower.json
 vsbl2sparql-angular.js
+example.sparql
