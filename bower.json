@@ -1,7 +1,7 @@
 {
   "name": "vsbl2sparql",
   "main": "vsbl2sparql-angular.js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/leipert/vsbl2sparql",
   "authors": [
     "Lukas Eipert <git@leipert.io>"
@@ -20,6 +20,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "bin",
     "tpl",
     "test",
     "lib",
