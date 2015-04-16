@@ -1,9 +1,10 @@
 {
   "name": "vsbl2sparql",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This package provides a Parser for VSBL-Models in JSON to SPARQL",
   "main": "vsbl2sparql-node.js",
   "scripts": {
+    "precommit": "gulp precommit && git add bin/",
     "test": "node_modules/.bin/mocha"
   },
   "bin": {
@@ -39,6 +40,8 @@
     "gulp": "^3.8.11",
     "gulp-file-include": "^0.8.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "husky": "^0.7.0",
     "mocha": "^2.0.1"
   }
 }

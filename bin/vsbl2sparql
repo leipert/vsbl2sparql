@@ -17,7 +17,7 @@ var doc = multiline(function () {
      */
 });
 
-var opt = docopt(doc);
+var opt = docopt(doc,{version: '0.2.1'});
 
 var json;
 if (opt['<json-file>'] === null) {
