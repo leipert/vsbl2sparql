@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+var multiline = require("multiline");
+var docopt = require("docopt").docopt;
+var fs = null;
+var doc = multiline(function () {
+    /*
+     Usage:
+     vsbl2sparql [options]
+     vsbl2sparql <json-file> [options]
+
+     Options:
+     -h --help           Show this.
+     -v --version        Print program version.
+     -o FILE --out=FILE  Specify output file.
+     */
+});
+
+var opt = docopt(doc);
+
+var json;
+if (opt['<json-file>'] === null) {
+    fs = require('fs');
+    var size = fs.fstatSync(process.stdin.fd).size;
+    var buffer = size > 0 ? fs.readSync(process.stdin.fd, size)[0] : '';
+    if (buffer === '') {
+        return;
+    }
+    try {
+        json = JSON.parse(buffer);
+    } catch (e) {
+        console.error("JSON input malformatted");
+        return;
+    }
+} else {
+    try {
+        json = require(process.cwd() + '/' + opt['<json-file>'])
+    } catch (e) {
+        console.error("JSON input malformatted");
+        return;
+    }
+}
+var sparql = '';
+
+if (json !== undefined) {
+    var vsbl2sparql = require('../vsbl2sparql-node');
+    sparql = vsbl2sparql.translateJSONToSPARQL(json).toString();
+    if (opt['--out'] === null) {
+        process.stdout.write(sparql + '\n');
+    }else{
+        if(fs === null){
+            fs = require('fs');
+        }
+        fs.writeFile(process.cwd() + '/' + opt['--out'], sparql);
+    }
+}
