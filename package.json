@@ -1,6 +1,6 @@
 {
   "name": "vsbl2sparql",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "This package provides a Parser for VSBL-Models in JSON to SPARQL",
   "main": "vsbl2sparql-node.js",
   "scripts": {

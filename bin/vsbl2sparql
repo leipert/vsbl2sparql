@@ -3,6 +3,7 @@
 var multiline = require("multiline");
 var docopt = require("docopt").docopt;
 var fs = null;
+var path = null;
 var doc = multiline(function () {
     /*
      Usage:
@@ -34,7 +35,8 @@ if (opt['<json-file>'] === null) {
     }
 } else {
     try {
-        json = require(process.cwd() + '/' + opt['<json-file>'])
+        path = require('path');
+        json = require(path.join(process.cwd(), opt['<json-file>']));
     } catch (e) {
         console.error("JSON input malformatted");
         return;
@@ -47,10 +49,13 @@ if (json !== undefined) {
     sparql = vsbl2sparql.translateJSONToSPARQL(json).toString();
     if (opt['--out'] === null) {
         process.stdout.write(sparql + '\n');
-    }else{
-        if(fs === null){
+    } else {
+        if (fs === null) {
             fs = require('fs');
         }
-        fs.writeFile(process.cwd() + '/' + opt['--out'], sparql);
+        if (path === null) {
+            path = require('path');
+        }
+        fs.writeFile(path.join(process.cwd(), opt['--out']), sparql);
     }
 }
